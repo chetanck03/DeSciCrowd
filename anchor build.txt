@@ -1,0 +1,3 @@
+anchor build
+anchor deploy
+npx esrun scripts/init.ts 
