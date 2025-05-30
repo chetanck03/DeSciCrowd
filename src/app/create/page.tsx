@@ -60,29 +60,29 @@ export default function Page() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Create Campaign</h1>
+      <h1 className="text-3xl font-bold text-neutral mb-6">Create Campaign</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
-          placeholder="What's the grand title?"
+          placeholder="Give your research campaign a compelling title (max 64 characters)"
           maxLength={64}
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="input input-bordered input-primary w-full"
           required
         />
         <input
           type="url"
-          placeholder="Paste that fancy image URL here!"
+          placeholder="Link to a relevant image or illustration for your campaign (max 256 characters)"
           maxLength={256}
           value={form.image_url}
           onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="input input-bordered input-primary w-full"
           required
         />
         <input
           type="text"
-          placeholder="How many SOLs for your dream?"
+          placeholder="Set your fundraising goal in SOL (e.g., 100)"
           value={form.goal}
           onChange={(e) => {
             const value = e.target.value
@@ -90,23 +90,20 @@ export default function Page() {
               setForm({ ...form, goal: value })
             }
           }}
-          className="w-full p-2 border rounded text-black"
+          className="input input-bordered input-primary w-full"
           required
         />
         <textarea
-          placeholder="Tell us the epic tale of your project..."
+          placeholder="Describe your research project and its impact (max 512 characters)"
           maxLength={512}
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="w-full textarea textarea-bordered textarea-primary"
           required
         />
 
         <div className="mt-4 space-x-4 flex justify-start items-center">
-          <button
-            type="submit"
-            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg"
-          >
+          <button type="submit" className="btn btn-primary">
             Create Now
           </button>
         </div>

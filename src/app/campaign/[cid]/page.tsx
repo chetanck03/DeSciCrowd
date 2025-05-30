@@ -51,7 +51,7 @@ export default function CampaignPage() {
             height={1080} // Adjust this to match your image dimensions
             className="w-full h-64 object-cover"
           />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="absolute inset-0 bg-neutral bg-opacity-70 flex items-center justify-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white text-center">
               {campaign.title}
             </h1>

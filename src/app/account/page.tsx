@@ -61,10 +61,7 @@ export default function Page() {
             </p>
 
             <div className="mt-6">
-              <a
-                href="/create"
-                className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg"
-              >
+              <a href="/create" className="btn items-center btn-primary">
                 Create a Campaign
               </a>
             </div>

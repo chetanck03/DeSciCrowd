@@ -39,6 +39,7 @@ const CampaignDonate: React.FC<{ campaign: Campaign; pda: string }> = ({
     await toast.promise(
       new Promise<void>(async (resolve, reject) => {
         try {
+          const { title, description, imageUrl, goal } = campaign
           const tx: any = await donateToCampaign(
             program!,
             publicKey!,
@@ -67,14 +68,14 @@ const CampaignDonate: React.FC<{ campaign: Campaign; pda: string }> = ({
   return (
     <div>
       <div className="bg-white shadow-lg rounded-lg p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
-          <FaDonate className="text-green-600" />
+        <h2 className="text-xl font-bold text-neutral mb-4 flex items-center gap-2">
+          <FaDonate className="text-primary" />
           Donate
         </h2>
         <form onSubmit={handleSubmit}>
           <label
             htmlFor="donationAmount"
-            className="block text-gray-700 font-semibold mb-2"
+            className="block text-neutral font-semibold mb-2"
           >
             Amount (SOL)
           </label>
@@ -91,7 +92,7 @@ const CampaignDonate: React.FC<{ campaign: Campaign; pda: string }> = ({
                 setAmount(value)
               }
             }}
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+            className="w-full input input-bordered input-primary"
             min="1"
             required
           />
@@ -102,49 +103,38 @@ const CampaignDonate: React.FC<{ campaign: Campaign; pda: string }> = ({
               !campaign.active ||
               campaign.amountRaised >= campaign.goal
             }
-            className={`mt-4 w-full bg-green-600 hover:bg-green-700 ${
-              !amount ||
-              !campaign.active ||
-              campaign.amountRaised >= campaign.goal
-                ? 'opacity-50 cursor-not-allowed'
-                : ''
-            } text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2`}
+            className={`mt-4 w-full bg-blue-600 hover:bg-blue-700  text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center  ${!amount || !campaign.active || campaign.amountRaised >= campaign.goal ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            <FaDonate />
+            <FaDonate className=" mr-2" />
             Donate Now
           </button>
         </form>
 
         {publicKey && campaign.creator === publicKey.toBase58() && (
-          <div className="mt-6 flex flex-wrap gap-2 md:flex-nowrap md:gap-0">
+          <div className="mt-6  flex flex-wrap gap-2 md:flex-nowrap md:gap-2">
             <Link
               href={`/campaign/edit/${pda}`}
-              className="bg-transparent hover:bg-green-600 text-green-600 hover:text-white
-              font-semibold py-2 px-4 flex-1 md:rounded-l-lg flex items-center justify-center
-              border border-green-600 hover:border-transparent"
+              className="btn btn-outline btn-secondary flex items-center justify-center md:rounded-l-lg"
             >
-              <FaEdit />
+              <FaEdit className="" />
               Edit
             </Link>
             {campaign.active && (
               <button
                 type="button"
-                className="bg-green-600 hover:bg-green-700 text-white
-              font-semibold py-2 px-4 flex-1 flex items-center justify-center"
+                className="btn btn-error  flex items-center justify-center"
                 onClick={() => dispatch(setDelModal('scale-100'))}
               >
-                <FaTrashAlt />
+                <FaTrashAlt className="" />
                 Delete
               </button>
             )}
 
             <button
-              className="bg-transparent hover:bg-green-600 text-green-600 hover:text-white
-              font-semibold py-2 px-4 flex-1 md:rounded-r-lg flex items-center justify-center
-              border border-green-600 hover:border-transparent"
+              className="btn btn-outline btn-secondary flex items-center justify-center md:rounded-r-lg"
               onClick={() => dispatch(setWithdrawModal('scale-100'))}
             >
-              <FaDollarSign />
+              <FaDollarSign className="" />
               Payout
             </button>
           </div>

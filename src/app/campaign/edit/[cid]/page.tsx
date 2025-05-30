@@ -42,14 +42,16 @@ export default function Page() {
           programReadonly!,
           cid as string
         )
-        form.title = campaignData.title
-        form.description = campaignData.description
-        form.image_url = campaignData.imageUrl
-        form.goal = campaignData.goal
+        setForm({
+          title: campaignData.title,
+          description: campaignData.description,
+          image_url: campaignData.imageUrl,
+          goal: campaignData.goal,
+        });
       }
       fetchDetails()
     }
-  }, [program, cid])
+  }, [programReadonly, cid]) // Added programReadonly and cid to dependency array
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -88,7 +90,7 @@ export default function Page() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">Update Campaign</h1>
+      <h1 className="text-3xl font-bold text-neutral mb-6">Update Campaign</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -96,7 +98,7 @@ export default function Page() {
           maxLength={64}
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="w-full input input-bordered input-primary"
           required
         />
         <input
@@ -105,7 +107,7 @@ export default function Page() {
           maxLength={256}
           value={form.image_url}
           onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="w-full input input-bordered input-primary"
           required
         />
         <input
@@ -118,7 +120,7 @@ export default function Page() {
               setForm({ ...form, goal: value })
             }
           }}
-          className="w-full p-2 border rounded text-black"
+          className="w-full input input-bordered input-primary"
           required
         />
         <textarea
@@ -126,21 +128,21 @@ export default function Page() {
           maxLength={512}
           value={form.description}
           onChange={(e) => setForm({ ...form, description: e.target.value })}
-          className="w-full p-2 border rounded text-black"
+          className="w-full textarea textarea-bordered textarea-primary"
           required
         />
 
         <div className="mt-4 space-x-4 flex justify-start items-center">
           <button
             type="submit"
-            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg"
+            className="btn btn-primary"
           >
             Update Now
           </button>
 
           <Link
             href={`/campaign/${cid}`}
-            className="bg-black hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg text-center"
+            className="btn btn-outline btn-neutral"
           >
             Back
           </Link>

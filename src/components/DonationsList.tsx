@@ -12,8 +12,8 @@ const DonationsList: React.FC<{ donations: Transaction[] }> = ({
 
   return (
     <div className="mt-8">
-      <h2 className="text-lg font-bold text-gray-800 mb-4 flex items-center gap-2">
-        <FaMoneyBillWave className="text-green-600" />
+      <h2 className="text-lg font-bold text-neutral mb-4 flex items-center gap-2">
+        <FaMoneyBillWave className="text-primary" />
         Donation History
       </h2>
       {donations.length > 0 ? (
@@ -23,28 +23,29 @@ const DonationsList: React.FC<{ donations: Transaction[] }> = ({
               key={index}
               className="px-4 py-2 flex justify-between items-center"
             >
-              <p className="text-gray-800 flex justify-start items-center space-x-1">
+              <p className="text-neutral flex justify-start items-center space-x-1">
                 <strong>
                   <Link
                     href={`https://explorer.solana.com/address/${donation.owner}?cluster=${CLUSTER_NAME}`}
                     target="_blank"
+                    className="text-secondary hover:underline"
                   >
                     {truncateAddress(donation.owner)}
                   </Link>
                 </strong>{' '}
-                <small className="text-green-500">
+                <small className="text-primary">
                   {donation.amount.toLocaleString()} SOL
                 </small>
               </p>
 
-              <p className="text-sm text-gray-600">
+              <p className="text-neutral text-sm">
                 {new Date(donation.timestamp).toLocaleDateString()}
               </p>
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-gray-600">No donations yet.</p>
+        <p className="text-neutral">No donations yet.</p>
       )}
     </div>
   )

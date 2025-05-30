@@ -101,7 +101,7 @@ const WithdrawModal = ({
                   setAmount(value)
                 }
               }}
-              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
+              className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               min="1"
               max={campaign.balance.toFixed(2)}
               required
@@ -112,7 +112,7 @@ const WithdrawModal = ({
             <button
               type="submit"
               disabled={!amount}
-              className={`w-full bg-green-600 hover:bg-green-700 ${
+              className={`w-full bg-blue-600 hover:bg-blue-700 ${
                 !amount ? 'opacity-50 cursor-not-allowed' : ''
               } text-white font-semibold py-2 px-4 rounded-lg flex items-center justify-center gap-2`}
             >

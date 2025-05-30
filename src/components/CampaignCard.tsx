@@ -32,13 +32,13 @@ const CampaignCard: React.FC<{ campaign: Campaign }> = ({ campaign }) => {
         <div className="mt-4">
           <div className="h-2 bg-gray-200 rounded-full">
             <div
-              className="h-2 bg-green-500 rounded-full"
+              className="h-2 bg-blue-600 rounded-full"
               style={{ width: `${progressPercentage}%` }}
             />
           </div>
           <div className="flex justify-between items-center mt-2 text-sm">
             <span className="text-gray-700 flex items-center space-x-1">
-              <FaCoins className="text-green-500" />
+              <FaCoins className="text-blue-600" />
               <strong>{campaign.amountRaised}</strong> SOL Raised
             </span>
             <span className="text-gray-700 flex items-center space-x-1">
@@ -49,7 +49,7 @@ const CampaignCard: React.FC<{ campaign: Campaign }> = ({ campaign }) => {
         </div>
         <Link
           href={`/campaign/${campaign.publicKey}`}
-          className="mt-4 w-full bg-green-600 hover:bg-green-700
+          className="mt-4 w-full bg-blue-600 hover:bg-blue-700
           text-white text-sm font-semibold py-2 px-4 rounded-lg block text-center"
         >
           View Campaign

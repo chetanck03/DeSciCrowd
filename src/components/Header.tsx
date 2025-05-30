@@ -24,8 +24,8 @@ export default function Header() {
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-green-600">
-          DeSci<span className="text-gray-700">Crowd</span>
+        <Link href="/" className="text-2xl font-bold text-primary">
+          DeSci<span className="text-secondary">Crowd</span>
         </Link>
 
         {/* Static Navigation */}
@@ -33,16 +33,16 @@ export default function Header() {
           <nav className="hidden md:flex space-x-6 items-center">
             <Link
               href="/account"
-              className="text-gray-700 hover:text-green-600 flex items-center space-x-1 transition duration-300"
+              className="text-neutral hover:text-primary flex items-center space-x-1 transition duration-300"
             >
-              <FaUserCircle className="text-gray-700 hover:text-green-600" />
+              <FaUserCircle className="text-neutral hover:text-primary" />
               <span>Account</span>
             </Link>
             <Link
               href="/create"
-              className="text-gray-700 hover:text-green-600 flex items-center space-x-1 transition duration-300"
+              className="text-neutral hover:text-primary flex items-center space-x-1 transition duration-300"
             >
-              <FaPlusCircle className="text-gray-700 hover:text-green-600" />
+              <FaPlusCircle className="text-neutral hover:text-primary" />
               <span>Create</span>
             </Link>
           </nav>
@@ -51,16 +51,14 @@ export default function Header() {
         {isMounted && (
           <div className="hidden md:inline-block">
             {/* Static Wallet Button */}
-            <WalletMultiButton
-              style={{ backgroundColor: '#16a34a', color: 'white' }}
-            />
+            <WalletMultiButton />
           </div>
         )}
 
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-neutral focus:outline-none"
         >
           {isOpen ? (
             <FaTimes className="w-6 h-6" />
@@ -78,14 +76,14 @@ export default function Header() {
               <>
                 <Link
                   href="/account"
-                  className="text-gray-700 hover:text-green-600 flex items-center space-x-2 transition duration-300"
+                  className="text-neutral hover:text-primary flex items-center space-x-2 transition duration-300"
                 >
                   <FaUserCircle />
                   <span>Account</span>
                 </Link>
                 <Link
                   href="/create"
-                  className="text-gray-700 hover:text-green-600 flex items-center space-x-2 transition duration-300"
+                  className="text-neutral hover:text-primary flex items-center space-x-2 transition duration-300"
                 >
                   <FaPlusCircle />
                   <span>Create</span>
@@ -93,9 +91,7 @@ export default function Header() {
               </>
             )}
             {isMounted && (
-              <WalletMultiButton
-                style={{ backgroundColor: '#16a34a', color: 'white' }}
-              />
+              <WalletMultiButton />
             )}
           </div>
         </nav>
