@@ -64,20 +64,20 @@ export default function Page() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
-          placeholder="Give your research campaign a compelling title (max 64 characters)"
+          placeholder="Title (max 64 characters)"
           maxLength={64}
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
-          className="textarea input-bordered input-primary w-full"
+          className="input input-bordered input-primary w-full"
           required
         />
         <input
           type="url"
-          placeholder="Link to a relevant image or illustration for your campaign (max 256 characters)"
+          placeholder="Link to a relevant image (max 256 characters)"
           maxLength={256}
           value={form.image_url}
           onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-          className="textarea input-bordered input-primary w-full"
+          className="input input-bordered input-primary w-full"
           required
         />
         <input
@@ -90,7 +90,7 @@ export default function Page() {
               setForm({ ...form, goal: value })
             }
           }}
-          className="textarea input-bordered input-primary w-full"
+          className="input input-bordered input-primary w-full"
           required
         />
         <textarea
