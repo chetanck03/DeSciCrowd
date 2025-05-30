@@ -2,6 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 1s ease-in-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 1s ease-in-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 1s ease-in-out;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #3066e8, #6b48ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .image-hover-effect {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .image-hover-effect:hover {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 html,
 body {
     min-height: 100%;

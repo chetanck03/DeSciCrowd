@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-md fixed w-full top-0 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-primary">
           DeSci<span className="text-secondary">Crowd</span>
