@@ -68,7 +68,7 @@ export default function Page() {
           maxLength={64}
           value={form.title}
           onChange={(e) => setForm({ ...form, title: e.target.value })}
-          className="input input-bordered input-primary w-full"
+          className="textarea input-bordered input-primary w-full"
           required
         />
         <input
@@ -77,7 +77,7 @@ export default function Page() {
           maxLength={256}
           value={form.image_url}
           onChange={(e) => setForm({ ...form, image_url: e.target.value })}
-          className="input input-bordered input-primary w-full"
+          className="textarea input-bordered input-primary w-full"
           required
         />
         <input
@@ -90,7 +90,7 @@ export default function Page() {
               setForm({ ...form, goal: value })
             }
           }}
-          className="input input-bordered input-primary w-full"
+          className="textarea input-bordered input-primary w-full"
           required
         />
         <textarea
