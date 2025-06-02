@@ -13,7 +13,7 @@ DeSciCrowd is a decentralized crowdfunding platform built on the Solana blockcha
 To add a demo video or PPT, you can include a link to an external hosting platform like YouTube or Google Slides:
 
 
-[Demo Video](https://youtu.be/_sTez0BjuYA)
+[Demo Video](https://youtu.be/v7e1zGtza8w)
 
 [PPT Presentation](https://docs.google.com/presentation/d/1KLke3rNYH51FUw5rI68PVYxU0vw5ah7t/edit?slide=id.p1#slide=id.p1)
 
