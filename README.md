@@ -1,6 +1,6 @@
 # DeSciCrowd
 
-Transparent, Decentralized, and Reproducible Science Funding via Solana
+*Transparent, Decentralized, and Reproducible Science Funding via Solana*
 ---
 
 ## Introduction
