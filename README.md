@@ -1,94 +1,194 @@
-# fundus
+# DeSciCrowd
+
+**Transparent, Decentralized, and Reproducible Science Funding via Solana**
+---
+
+## Introduction
+
+DeSciCrowd is a decentralized crowdfunding platform built on the Solana blockchain using Anchor, Next.js, and Tailwind CSS. It enables researchers to create, manage, and fund scientific research campaigns in a transparent, secure, and outcome-driven manner. The platform uses milestone-based funding with community-driven peer review, incentivized by tokens, to ensure reproducibility and trust in scientific outcomes.
+
+---
+
+## Features
+
+- Create and manage decentralized science funding campaigns
+- Donate to campaigns with milestone-based disbursements
+- Transparent, auditable funding flow powered by Solana smart contracts
+- Wallet integration with Phantom and WalletConnect
+- Community peer review with token incentives
+- Responsive frontend built with Next.js and Tailwind CSS
+
+---
+
+## Technologies Used
+
+- Solana Blockchain & Anchor Framework for smart contracts
+- Next.js for frontend React application
+- Tailwind CSS for styling
+- Phantom.js and WalletConnect for wallet integration
+- Node.js and JavaScript for backend and scripting
+
+---
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node v18.18.0 or higher
+Make sure you have the following installed:
 
-- Rust v1.77.2 or higher
-- Anchor CLI 0.30.1 or higher
-- Solana CLI 1.18.17 or higher
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [Anchor CLI](https://project-serum.github.io/anchor/getting-started/installation.html)
+- [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
 
+---
 ### Installation
 
-#### Clone the repo
+1.  Clone the repository:
 
-```shell
-git clone <repo-url>
-cd <repo-name>
+    ```bash
+    git clone https://github.com/chetanck03/DeSciCrowd.git
+    cd DeSciCrowd
+    ```
+2.  Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+## Usage
+
+### Running the Application
+
+1.  Start the development server:
+
+    ```bash
+    npm run dev
+    ```
+2.  Open your browser and navigate to `http://localhost:3000`.
+
+### Building the Project
+
+```bash
+npm run build
 ```
 
-#### Install Dependencies
+### Running Anchor Tests
 
-```shell
-pnpm install
+```bash
+anchor test
 ```
 
-#### Start the web app
+## Project Structure
 
 ```
-pnpm dev
+.
+├── .eslintrc.json
+├── .gitattributes
+├── .gitignore
+├── anchor/
+│   ├── Anchor.toml
+│   ├── programs/
+│   │   └── fundus/
+│   │       ├── src/
+│   │       │   ├── lib.rs
+│   │       │   ├── instructions/
+│   │       │   │   ├── create_campaign.rs
+│   │       │   │   ├── delete_campaign.rs
+│   │       │   │   ├── donate.rs
+│   │       │   │   ├── initialize.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── update_campaign.rs
+│   │       │   │   ├── update_platform_settings.rs
+│   │       │   │   └── withdraw.rs
+│   │       │   ├── states/
+│   │       │   │   ├── campaign.rs
+│   │       │   │   ├── mod.rs
+│   │       │   │   ├── program_state.rs
+│   │       │   │   └── transaction.rs
+├── public/
+│   └── logo.png
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── react-query-provider.tsx
+│   │   ├── account/
+│   │   │   └── page.tsx
+│   │   ├── api/
+│   │   │   ├── list_campaigns/
+│   │   │   │   └── route.ts
+│   │   │   ├── public_balance/
+│   │   │   │   └── route.ts
+│   │   │   └── show_campaign/
+│   │   │       └── route.ts
+│   │   ├── campaign/
+│   │   │   ├── [cid]/
+│   │   │   │   └── page.tsx
+│   │   │   └── edit/
+│   │   │       └── [cid]/
+│   │   │           └── page.tsx
+│   │   └── create/
+│   │       └── page.tsx
+│   ├── components/
+│   │   ├── AppWalletProvider.tsx
+│   │   ├── CampaignCard.tsx
+│   │   ├── CampaignDetails.tsx
+│   │   ├── CampaignDonate.tsx
+│   │   ├── CampaignHero.tsx
+│   │   ├── DeleteModal.tsx
+│   │   ├── DonationsList.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Header.tsx
+│   │   ├── PlatformSettings.tsx
+│   │   ├── WithdrawalList.tsx
+│   │   └── WithdrawModal.tsx
+│   ├── data/
+│   │   └── index.ts
+│   ├── services/
+│   │   └── blockchain.tsx
+│   ├── store/
+│   │   ├── globalSlices.ts
+│   │   ├── index.ts
+│   │   ├── actions/
+│   │   │   └── globalActions.ts
+│   │   └── states/
+│   │       └── globalStates.ts
+│   ├── utils/
+│   │   ├── helper.ts
+│   │   └── interfaces.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.mjs
+├── README.md
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
-## Apps
+## Demo Video/PPT
 
-### anchor
+To add a demo video or PPT, you can include a link to an external hosting platform like YouTube or Google Slides:
 
-This is a Solana program written in Rust using the Anchor framework.
 
-#### Commands
+[Demo Video](https://youtu.be/_sTez0BjuYA)
 
-You can use any normal anchor commands. Either move to the `anchor` directory and run the `anchor` command or prefix the command with `pnpm`, eg: `pnpm anchor`.
+[PPT Presentation](https://docs.google.com/presentation/d/1KLke3rNYH51FUw5rI68PVYxU0vw5ah7t/edit?slide=id.p1#slide=id.p1)
 
-#### Sync the program id:
 
-Running this command will create a new keypair in the `anchor/target/deploy` directory and save the address to the Anchor config file and update the `declare_id!` macro in the `./src/lib.rs` file of the program.
+## Contributing
 
-You will manually need to update the constant in `anchor/lib/basic-exports.ts` to match the new program id.
+Contributions are welcome! Please follow these guidelines:
 
-```shell
-pnpm anchor keys sync
-```
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Submit a pull request with a clear description of your changes.
 
-#### Build the program:
+## License
 
-```shell
-pnpm anchor-build
-```
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute it.
 
-#### Start the test validator with the program deployed:
-
-```shell
-pnpm anchor-localnet
-```
-
-#### Run the tests
-
-```shell
-pnpm anchor-test
-```
-
-#### Deploy to Devnet
-
-```shell
-pnpm anchor deploy --provider.cluster devnet
-```
-
-### web
-
-This is a React app that uses the Anchor generated client to interact with the Solana program.
-
-#### Commands
-
-Start the web app
-
-```shell
-pnpm dev
-```
-
-Build the web app
-
-```shell
-pnpm build
-```
+---
+Thank you for checking out DeSciCrowd! Together, we can make science funding more transparent and reproducible.
