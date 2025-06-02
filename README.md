@@ -1,11 +1,21 @@
 # DeSciCrowd
 
-**Transparent, Decentralized, and Reproducible Science Funding via Solana**
+Transparent, Decentralized, and Reproducible Science Funding via Solana
 ---
 
 ## Introduction
 
 DeSciCrowd is a decentralized crowdfunding platform built on the Solana blockchain using Anchor, Next.js, and Tailwind CSS. It enables researchers to create, manage, and fund scientific research campaigns in a transparent, secure, and outcome-driven manner. The platform uses milestone-based funding with community-driven peer review, incentivized by tokens, to ensure reproducibility and trust in scientific outcomes.
+
+---
+## Demo Video/PPT
+
+To add a demo video or PPT, you can include a link to an external hosting platform like YouTube or Google Slides:
+
+
+[Demo Video](https://youtu.be/_sTez0BjuYA)
+
+[PPT Presentation](https://docs.google.com/presentation/d/1KLke3rNYH51FUw5rI68PVYxU0vw5ah7t/edit?slide=id.p1#slide=id.p1)
 
 ---
 
@@ -166,16 +176,7 @@ anchor test
 ├── tailwind.config.ts
 └── tsconfig.json
 ```
-
-## Demo Video/PPT
-
-To add a demo video or PPT, you can include a link to an external hosting platform like YouTube or Google Slides:
-
-
-[Demo Video](https://youtu.be/_sTez0BjuYA)
-
-[PPT Presentation](https://docs.google.com/presentation/d/1KLke3rNYH51FUw5rI68PVYxU0vw5ah7t/edit?slide=id.p1#slide=id.p1)
-
+---
 
 ## Contributing
 
@@ -185,6 +186,7 @@ Contributions are welcome! Please follow these guidelines:
 2.  Create a new branch for your feature or bug fix.
 3.  Submit a pull request with a clear description of your changes.
 
+---
 ## License
 
 This project is licensed under the MIT License.  
