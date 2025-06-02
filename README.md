@@ -47,9 +47,9 @@ To add a demo video or PPT, you can include a link to an external hosting platfo
 Make sure you have the following installed:
 
 - [Node.js](https://nodejs.org/) (v16 or higher recommended)
-- [Anchor CLI](https://project-serum.github.io/anchor/getting-started/installation.html)
-- [Solana CLI](https://docs.solana.com/cli/install-solana-cli-tools)
-
+- [Anchor CLI](https://www.anchor-lang.com/docs/installation)
+- [Solana CLI](https://solana.com/docs/intro/installation)
+ 
 ---
 ### Installation
 
@@ -63,8 +63,8 @@ Make sure you have the following installed:
 
     ```bash
     npm install
-    ```
-
+    ```    
+---
 ## Usage
 
 ### Running the Application
@@ -75,7 +75,7 @@ Make sure you have the following installed:
     npm run dev
     ```
 2.  Open your browser and navigate to `http://localhost:3000`.
-
+---
 ### Building the Project
 
 ```bash
@@ -87,6 +87,7 @@ npm run build
 ```bash
 anchor test
 ```
+---
 
 ## Project Structure
 
